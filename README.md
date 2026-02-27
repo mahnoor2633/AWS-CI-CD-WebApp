@@ -1,26 +1,79 @@
-# AWS-CI-CD-WebApp
-A complete CI/CD pipeline automation that takes code from commit to production. 
+This project demonstrates how to build a fully automated CI/CD pipeline on AWS that takes a Java web application from source code to production deployment without manual intervention. The pipeline integrates AWS DevOps services to enable continuous integration, artifact management, infrastructure provisioning, and automated deployment.
 
-In this project, I designed and implemented a complete end-to-end CI/CD pipeline on AWS to automate the build, packaging, and deployment of a Java-based application.
+🚀 **PROJECT OVERVIEW**
 
-I began by provisioning a development EC2 environment, installing all build and deployment dependencies, and connecting it to GitHub for version-controlled source management. I then configured an AWS CodeArtifact repository to store build materials and artifacts, and linked it to the development server for seamless dependency retrieval. After compiling the application and generating artifacts, I created an AWS CodeBuild project capable of simultaneously pulling source code from GitHub and dependencies from CodeArtifact to automatically produce versioned .WAR files.
+The pipeline automates:
 
-To ensure reliable and reproducible infrastructure, I developed an AWS CloudFormation template that provisions a fully configured production EC2 instance, including Apache as the web server and Tomcat as the Java application server. I then configured an AWS CodeDeploy application to take the compiled .WAR file and deploy it onto the production environment.
+- Source code integration from GitHub
 
-Finally, I orchestrated all components using AWS CodePipeline, enabling an automated workflow that triggers on every commit to the GitHub repository. The pipeline performs source retrieval, builds artifacts, stores them, and deploys to production without manual intervention.
+- Application build and artifact generation
 
-This project demonstrates practical experience with DevOps automation, CI/CD orchestration, infrastructure as code, artifact management, cloud-native deployment pipelines, and environment segregation, culminating in a fully automated and repeatable delivery process.
+- Secure artifact storage
 
-This project demonstrates the following DevOps concepts:
+- Infrastructure provisioning using Infrastructure-as-Code
 
-Continuous Integration (CI) using AWS CodeBuild
-Continuous Deployment (CD) using AWS CodeDeploy
-Infrastructure as Code (IaC) using AWS CloudFormation
-Artifact Management using AWS CodeArtifact
-Version Control Integration using GitHub & Git
-Build Automation, Deployment Automation, and Pipeline Orchestration using AWS CodePipeline
-Security Best Practices through IAM roles, service permissions, and least-privilege access control
-Environment Segregation using separate development and production EC2 instances
+- Automated deployment to a production EC2 instance
 
-Following documentation can be viewed for a complete guide to the project:
-https://docs.google.com/document/d/1seSUfsipcPQwsLLR5NMI1C2FdWmpSlAWKa-u4pDIjFg/edit?usp=sharing
+- The result is a streamlined, zero-touch deployment workflow.
+
+🏗 **ARCHITECTURE OVERVIEW**
+
+- GitHub → CodePipeline → CodeBuild → CodeArtifact → CodeDeploy → EC2 (Apache Tomcat)
+- Infrastructure is provisioned using CloudFormation templates.
+
+🛠 **TECHNOLOGIES USED**
+
+- AWS EC2
+
+- AWS CodePipeline
+
+- AWS CodeBuild
+
+- AWS CodeDeploy
+
+- AWS CodeArtifact
+
+- AWS CodeConnection
+
+- AWS CloudFormation
+
+- AWS IAM
+
+- Java & Maven
+
+- Apache Tomcat
+
+- Apache Http
+
+- GitHub
+
+📌 **IMPLEMENTATION STEPS**
+https://docs.google.com/document/d/1Z0pCfgYJX48suYgwiMHfhrMsDWzuILwcafePoTpZT9E/edit?usp=sharing
+
+🔐 **KEY DEVOPS CONCEPTS DEMONSTRATED**
+
+- Continuous Integration (CI)
+
+- Continuous Deployment (CD)
+
+- Infrastructure as Code (IaC)
+
+- Artifact Repository Management
+
+- Immutable Build Artifacts
+
+- Zero-Touch Deployment
+
+- AWS IAM-based secure access
+
+- Environment Standardization
+
+📈 **OUTCOME**
+
+- Eliminated manual build & deployment steps
+
+- Reduced deployment time significantly
+
+- Standardized infrastructure provisioning
+
+- Enabled scalable and repeatable release cycles
